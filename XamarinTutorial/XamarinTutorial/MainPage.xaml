@@ -19,10 +19,14 @@
                         <FlexLayout JustifyContent="SpaceBetween"
                                     AlignItems="Center"
                                     Padding="20, 0">
-                            <Label Text="{Binding TodoText}"
-                                   FontSize="Large" />
+                            <ContentView>
+                                <FlexLayout AlignItems="Center">
+                                    <CheckBox IsChecked="{Binding IsComplete}" />
+                                    <Label Text="{Binding TodoText}"
+                                           FontSize="Large" />
+                                </FlexLayout>
+                            </ContentView>
                             <ImageButton Source="delete.png"
-                                         Scale="0.5"
                                          Command="{Binding Path=BindingContext.RemoveTodoCommand, Source={x:Reference TodoList}}"
                                          CommandParameter="{Binding .}" />
                         </FlexLayout>

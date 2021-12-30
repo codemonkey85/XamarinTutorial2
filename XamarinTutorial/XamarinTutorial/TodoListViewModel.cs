@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -15,13 +14,11 @@ namespace XamarinTutorial
 
         public ICommand RemoveTodoCommand => new Command(RemoveTodoItem);
 
-        public ICommand ToggleTodoCommand => new Command(ToggleTodoItem);
-
         public TodoListViewModel()
         {
             TodoItems = new ObservableCollection<TodoItem>();
             TodoItems.Add(new TodoItem("Todo 1", false));
-            TodoItems.Add(new TodoItem("Todo 2", false));
+            TodoItems.Add(new TodoItem("Todo 2", true));
             TodoItems.Add(new TodoItem("Todo 3", false));
         }
 
@@ -38,10 +35,6 @@ namespace XamarinTutorial
             {
                 TodoItems.Remove(todoItem);
             }
-        }
-
-        public void ToggleTodoItem()
-        {
         }
     }
 }
