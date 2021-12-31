@@ -1,14 +1,20 @@
-﻿namespace XamarinTutorial
+﻿using System;
+
+namespace XamarinTutorial
 {
     public class TodoItem
     {
-        public string TodoText { get; set; }
+        public long TaskId { get; set; }
+
+        public string TaskTitle { get; set; }
 
         public bool IsComplete { get; set; }
 
+        public DateTime? DueDate { get; set; }
+
         public TodoItem(string todoText, bool isComplete)
         {
-            TodoText = todoText;
+            TaskTitle = todoText;
             IsComplete = isComplete;
         }
     }

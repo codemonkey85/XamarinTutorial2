@@ -9,6 +9,7 @@
         <local:TodoListViewModel />
     </ContentPage.BindingContext>
     <StackLayout>
+        <Button Clicked="Button_Clicked"></Button>
         <Entry x:Name="InputField"
                Text="{Binding NewTodoInputValue}"
                Placeholder="Enter a todo"
@@ -33,7 +34,7 @@
                                 <ContentView>
                                     <FlexLayout AlignItems="Center">
                                         <CheckBox IsChecked="{Binding IsComplete}" />
-                                        <Label Text="{Binding TodoText}"
+                                        <Label Text="{Binding TaskTitle}"
                                                FontSize="Large" />
                                     </FlexLayout>
                                 </ContentView>
