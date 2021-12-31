@@ -18,20 +18,27 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <FlexLayout JustifyContent="SpaceBetween"
-                                    AlignItems="Center"
-                                    Padding="20, 0">
-                            <ContentView>
-                                <FlexLayout AlignItems="Center">
-                                    <CheckBox IsChecked="{Binding IsComplete}" />
-                                    <Label Text="{Binding TodoText}"
-                                           FontSize="Large" />
-                                </FlexLayout>
-                            </ContentView>
-                            <ImageButton Source="delete.png"
-                                         Command="{Binding Path=BindingContext.RemoveTodoCommand, Source={x:Reference TodoList}}"
-                                         CommandParameter="{Binding .}" />
-                        </FlexLayout>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem IconImageSource="delete.png"
+                                               BackgroundColor="Red"
+                                               Command="{Binding Path=BindingContext.RemoveTodoCommand, Source={x:Reference TodoList}}"
+                                               CommandParameter="{Binding .}" />
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <FlexLayout JustifyContent="SpaceBetween"
+                                        AlignItems="Center"
+                                        Padding="20, 0">
+                                <ContentView>
+                                    <FlexLayout AlignItems="Center">
+                                        <CheckBox IsChecked="{Binding IsComplete}" />
+                                        <Label Text="{Binding TodoText}"
+                                               FontSize="Large" />
+                                    </FlexLayout>
+                                </ContentView>
+                            </FlexLayout>
+                        </SwipeView>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
